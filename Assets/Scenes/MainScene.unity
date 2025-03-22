@@ -7995,6 +7995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f2c8ee610c34558839b64290afe0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketManager: {fileID: 500036492}
   Info_Button: {fileID: 118010252}
   SoundButton: {fileID: 1620192483}
   exit_button: {fileID: 1482929057}
