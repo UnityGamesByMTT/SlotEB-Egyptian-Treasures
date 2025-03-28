@@ -5,6 +5,9 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    [Space]
+    [SerializeField] SocketIOManager socketManager;
+
     [Header("Menu UI")]
     [SerializeField]
     private Button Info_Button;
@@ -155,7 +158,8 @@ public class UIManager : MonoBehaviour
         if (YesQuit_Button) YesQuit_Button.onClick.AddListener(CallOnExitFunction);
 
         if (CloseDisconnect_Button) CloseDisconnect_Button.onClick.RemoveAllListeners();
-        if (CloseDisconnect_Button) CloseDisconnect_Button.onClick.AddListener(CallOnExitFunction);
+        if (CloseDisconnect_Button) CloseDisconnect_Button.onClick.AddListener(delegate { CallOnExitFunction(); socketManager.ReactNativeCallOnFailedToConnect(); }); //BackendChanges
+
         if (audioController) audioController.ToggleMute(false);
 
         if (Sound_Button) Sound_Button.onClick.RemoveAllListeners();
